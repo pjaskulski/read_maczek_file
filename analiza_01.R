@@ -24,11 +24,12 @@ calc_mean_month <- function(year, month) {
                  'TMIN_st', 'TSTD', 'TSTD_st', 'TMNG', 'TMNG_st', 'SMDB', 'SMDB_st', 
                  'RODZ_OP', 'PKSW', 'PKSW_st')
     
-    temp <- tempfile()
-    adres <- paste("https://dane.imgw.pl/data/dane_pomiarowo_obserwacyjne/dane_meteorologiczne/dobowe/klimat/",year,"/",year,"_",month, "_k.zip", sep="")
-    download.file(adres, temp)
+    temp <- paste(year,"_",month, "_k.zip", sep="")
+    if (!file.exists(temp)) {
+        adres <- paste("https://dane.imgw.pl/data/dane_pomiarowo_obserwacyjne/dane_meteorologiczne/dobowe/klimat/",year,"/",year,"_",month, "_k.zip", sep="")
+        download.file(adres, temp)
+    }
     month01 <- read.table(unz(temp, paste("k_d_", month,"_", year, ".csv", sep = "")), header = FALSE, sep = ",", fileEncoding = "WINDOWS-1250")
-    unlink(temp)
     
     colnames(month01) <- kolumny
     
