@@ -1,4 +1,4 @@
-# dane z serwisu dane.imgw.pl, średnia teperatura maksymalna i minimalna w zadanym miesiącu i roku
+# dane z serwisu https://danepubliczne.imgw.pl/ (dane.imgw.pl), średnia temperatura maksymalna i minimalna w zadanym miesiącu i roku
 
 # lista stacji pogodowych:
 #stacje <- read.table(file = "https://dane.imgw.pl/data/dane_pomiarowo_obserwacyjne/dane_meteorologiczne/wykaz_stacji.csv",
@@ -45,3 +45,5 @@ calc_mean_month <- function(year, month) {
 
 january <- calc_mean_month("2019", "01")
 sprintf("Styczeń 2019 - średnia temperatura maksymalna: %.2f °C, średnia temperatura minimalna: %.2f °C", january[1], january[2])
+feb <- calc_mean_month("2019", "02")
+sprintf("Luty 2019 - średnia temperatura maksymalna: %.2f °C, średnia temperatura minimalna: %.2f °C", feb[1], feb[2])
