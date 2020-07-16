@@ -1,2 +1,6 @@
 # learnrlang
-exercises in the R language
+Exercises in the R language
+
+Test RMaCzek library (https://cran.r-project.org/package=RMaCzek)
+
+Function to load data from an mdt file (MaCzek 3.3) to data.frame.
