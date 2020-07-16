@@ -1,9 +1,12 @@
 # Diagram Czekanowskiego w R!
 # Dzięki bibliotece RMaCzek (Albin Vasterlund, Krzysztof Bartoszek).
-# 
-# read_mdf_file - funkcja do wczytywania danych z pliku w formacie MaCzek 3.3
+# https://cran.r-project.org/package=RMaCzek
 
 library(RMaCzek)
+
+# read_mdf_file - function to load data from an mdt file (MaCzek 3.3)
+# Parameters: filepath - path to file *.mdt
+# Output: data.frame
 
 read_mdf_file <- function(filepath) {
   con <- file(filepath, "r")
@@ -17,7 +20,6 @@ read_mdf_file <- function(filepath) {
   
   while ( TRUE ) {
     line <- readLines(con, n = 1)
-    
     if ( length(line) == 0 ) {
       break
     }
@@ -26,9 +28,7 @@ read_mdf_file <- function(filepath) {
       close(con)
       stop("Error: This is not MaCzek DATA ver. 3.3 file!")
     }
-    
     num_line <- num_line + 1
-    
     if (line == '[RECORD_LABEL]') {
       start_rl <- TRUE
     }
@@ -51,7 +51,6 @@ read_mdf_file <- function(filepath) {
         cat(line, file = tmp, sep = '\n', append = TRUE)      
       }
     }
-    
   }
   close(con)
   
