@@ -4,7 +4,8 @@
 
 library(RMaCzek)
 
-# read_mdf_file - function to load data from an mdt file (MaCzek 3.3)
+# read_mdf_file - function to load data from an mdt file (MaCzek 3.3 - 
+# http://www.antropologia.uw.edu.pl/MaCzek/maczek.html)
 # Parameters: filepath - path to file *.mdt
 # Output: data.frame
 
