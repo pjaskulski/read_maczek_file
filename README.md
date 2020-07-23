@@ -7,3 +7,6 @@ Function to load data from an mdt file (MaCzek 3.3) to data.frame.
 
 Czekanowski's diagram, data from slabosz.mdt:
 ![Screen](slabosz.png)
+
+
+nasal.R -> test kmeans, FitKmeans, ClustGap on human skull data.
