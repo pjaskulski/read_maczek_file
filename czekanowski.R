@@ -4,12 +4,12 @@
 
 library(RMaCzek)
 
-# read_mdf_file - function to load data from an mdt file (MaCzek 3.3 - 
+# read_mdt_file - function to load data from an mdt file (MaCzek 3.3 - 
 # http://www.antropologia.uw.edu.pl/MaCzek/maczek.html)
 # Parameters: filepath - path to file *.mdt
 # Output: data.frame
 
-read_mdf_file <- function(filepath) {
+read_mdt_file <- function(filepath) {
   con <- file(filepath, "r")
   num_line <- 1
   start_rl <- FALSE
@@ -63,6 +63,6 @@ read_mdf_file <- function(filepath) {
   return(mdt)
 }
 
-test <- read_mdf_file('slabosz.mdt')
+test <- read_mdt_file('slabosz.mdt')
 res <- czek_matrix(test)
 plot.czek_matrix(res)
